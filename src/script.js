@@ -84,9 +84,13 @@ const material = new THREE.ShaderMaterial({
 	vertexShader: holographicVertexShader,
 	fragmentShader: holographicFragmentShader,
 	uniforms: {
-		uTime: { value: 0 },
+		uTime: new THREE.Uniform(0),
+		uColor: new THREE.Uniform(new THREE.Color("red")),
 	},
 	transparent: true,
+	side: THREE.DoubleSide,
+	depthWrite: false,
+	blending: THREE.AdditiveBlending,
 })
 
 /**
@@ -126,16 +130,16 @@ const tick = () => {
 	material.uniforms.uTime.value = elapsedTime
 
 	// Rotate objects
-	// if (suzanne) {
-	// 	suzanne.rotation.x = -elapsedTime * 0.1
-	// 	suzanne.rotation.y = elapsedTime * 0.2
-	// }
+	if (suzanne) {
+		suzanne.rotation.x = -elapsedTime * 0.1
+		suzanne.rotation.y = elapsedTime * 0.2
+	}
 
-	// sphere.rotation.x = -elapsedTime * 0.1
-	// sphere.rotation.y = elapsedTime * 0.2
+	sphere.rotation.x = -elapsedTime * 0.1
+	sphere.rotation.y = elapsedTime * 0.2
 
-	// torusKnot.rotation.x = -elapsedTime * 0.1
-	// torusKnot.rotation.y = elapsedTime * 0.2
+	torusKnot.rotation.x = -elapsedTime * 0.1
+	torusKnot.rotation.y = elapsedTime * 0.2
 
 	// Update controls
 	controls.update()
