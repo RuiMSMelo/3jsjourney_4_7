@@ -1,19 +1,28 @@
 {
-  "name": "threejs-journey-exercise",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build"
-  },
-  "devDependencies": {
-    "vite": "^6.2.2",
-    "vite-plugin-restart": "^0.4.2",
-    "vite-plugin-glsl": "^1.3.3"
-  },
-  "dependencies": {
-    "lil-gui": "^0.20.0",
-    "three": "^0.174.0"
-  }
+    "homepage": "https://github.com/RuiMSMelo/3jsjourney_4_7",
+    "name": "threejs-journey-exercise",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "gh-pages": "^6.3.0",
+        "vite": "^6.2.2",
+        "vite-plugin-glsl": "^1.3.3",
+        "vite-plugin-restart": "^0.4.2"
+    },
+    "dependencies": {
+        "lil-gui": "^0.20.0",
+        "three": "^0.174.0"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
+    }
 }
