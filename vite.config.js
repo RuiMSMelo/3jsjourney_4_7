@@ -5,7 +5,7 @@ import glsl from 'vite-plugin-glsl'
 export default defineConfig({
     root: 'src/',
     publicDir: '../static/',
-    base: 'https://github.com/RuiMSMelo/3jsjourney_4_7',
+    base: '/3jsjourney_4_7/',
     server: {
         host: true,
         open: !(
